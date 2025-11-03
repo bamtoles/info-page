@@ -41,7 +41,7 @@ SYSTEM_PROMPT = """
 @st.cache_resource(show_spinner=False)
 def _get_model():
     return genai.GenerativeModel(
-        model_name="gemini-pro",
+        model_name="gemini-1.5-flash",
         system_instruction=SYSTEM_PROMPT
     )
 
