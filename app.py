@@ -185,6 +185,6 @@ with cols[0]:
     if st.button("🧹 대화 초기화"):
         st.session_state.messages = []
         st.session_state.chat = model.start_chat(history=[])
-        st.experimental_rerun()
+        st.rerun()
 with cols[1]:
     st.caption("TIP: 이메일 주소는 마지막에 꼭 남겨 주세요.")
