@@ -90,10 +90,8 @@ for msg in st.session_state.messages:
 # -----------------------------------------------------------------------------
 # 5. 모델 API 호출 및 예외 처리 (API Call & Exception Handling)
 # -----------------------------------------------------------------------------
-# 429 Too Many Requests 방지를 위한 지수 백오프 재시도 로직 구현
-# 최대 3번 시도, 2초에서 시작해 점진적으로 대기 시간 증가
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 def get_gemini_response(chat_session, user_prompt):
+    # 재시도(tenacity) 기능 제거: 에러가 나면 억지로 재시도하지 않고 바로 보여주기 위함
     return chat_session.send_message(user_prompt)
 
 # -----------------------------------------------------------------------------
