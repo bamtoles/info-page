@@ -32,7 +32,7 @@ with st.sidebar:
     st.header("⚙️ 챗봇 설정")
     
     # 모델 선택 (실험 버전 제외)
-    model_options = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+    model_options = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"]
     selected_model = st.selectbox("기본 모델 선택", model_options)
     
     # API 키 입력 처리 (st.secrets 우선 확인 후 없으면 UI 입력)
